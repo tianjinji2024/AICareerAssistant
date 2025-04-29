@@ -15,3 +15,6 @@ pypdf
 
 # Evaluation
 google-genai==1.7.0
+
+# use Streamlit
+streamlit
