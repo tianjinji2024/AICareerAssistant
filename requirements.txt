@@ -1,0 +1,17 @@
+# Core LangChain framework
+langchain
+# Google Generative AI integration (for Gemini models & embeddings)
+langchain-google-genai
+# Loading .env files
+python-dotenv
+# ChromaDB vector store integration
+langchain-chroma
+# Common LangChain community utilities (loaders, etc.)
+langchain-community
+
+# --- Optional Libraries ---
+# load PDF files for RAG
+pypdf
+
+# Evaluation
+google-genai==1.7.0

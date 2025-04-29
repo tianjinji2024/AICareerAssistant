@@ -1,0 +1,15 @@
+.env
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*~
+*.swp
+venv/
+env/
+.venv/
+build/
+dist/
+*.egg-info/
+chroma_db_store/ # Also ignore the local vector store directory
+*.db          # Ignore SQLite database files like applications.db
