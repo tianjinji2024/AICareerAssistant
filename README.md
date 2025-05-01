@@ -21,7 +21,7 @@
 
 4.  **API Key:**
     *   Create a file named `.env` in the `aicareerchatbot` directory.
-    *   Add your Google Generative AI API key to it:
+    *   Add your Generative AI model API key to it:
         ```.env
         GOOGLE_API_KEY="YOUR_GOOGLE_API_KEY_HERE"
         ```
@@ -85,6 +85,6 @@ Key libraries used:
 
 ## Important Notes
 
-*   **Privacy:** This application processes your resume and job description content using a third-party LLM (Google Gemini). **Do not upload resumes or paste job descriptions containing highly sensitive personal information you are uncomfortable sharing.** Remove details like specific addresses, phone numbers (beyond what's necessary), personal IDs, etc., before using. 
-*   **API Costs:** Using Google Generative AI APIs or other APIs of chouce may incur costs depending on your usage and billing plan. Be mindful of the number of calls made, especially during evaluation runs.
+*   **Privacy:** This application processes your resume and job description content using a third-party LLM. **Do not upload resumes or paste job descriptions containing highly sensitive personal information you are uncomfortable sharing.** Remove details like specific addresses, phone numbers, personal IDs, etc., before using. 
+*   **API Costs:** Using Google Generative AI APIs or other APIs of choice may incur costs depending on your usage and billing plan. Be mindful of the number of calls made, especially during evaluation runs.
 *   **Demo Purpose:** The provided `app.py` is a basic implementation. The notebook explores more advanced concepts like RAG and detailed evaluation which might not be fully reflected in the current app version. (RAG is to be added in)
