@@ -1,6 +1,6 @@
-# AI Career Assistanet Chatbot & Evaluation
+# AI Career Assistant Chatbot & Evaluation
 
-This project provides a Streamlit chatbot application designed to help users analyze job fit and generate cover letters based on their resume and a job description. It also includes a separate Python script for evaluating the quality of the generated responses using LLM-as-a-judge techniques, including both pointwise and pairwise evaluation. This project also explores using
+This project provides a Streamlit chatbot application designed to help users analyze job fit and generate cover letters based on their resume and a job description. It also includes a separate Python script for evaluating the quality of the generated responses using LLM-as-a-judge techniques, including both pointwise and pairwise evaluation. This project also explores the option using Retrival Augmented Generation (RAG) to enhance the performace of the response by querying from a vector store with embeddings of desired examples of job applications.
 
 ## Overview
 
