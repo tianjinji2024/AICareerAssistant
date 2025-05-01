@@ -150,8 +150,8 @@ def eval_task(prompt, resume, job_desc, ai_response):
 
     try:
         # Use low temperature for evaluation
-        chat = client.chats.create(model='gemini-1.5-flash-latest', # Use a capable eval model
-                                  config=types.GenerateContentConfig(temperature=0.3))
+        chat = client.chats.create(model="gemini-2.5-pro-exp-03-25", # Use a new model, can change
+                                  config=types.GenerateContentConfig(temperature=0.5))
 
         # Generate the full text evaluation
         response_eval = chat.send_message(
@@ -186,8 +186,8 @@ def eval_pairwise(prompt, resume, job_desc, response_a, response_b):
     eval_input_prompt = f"Original Task Prompt Context:\n{str(prompt)}\n\nResume Snippet:\n{resume[:300]}...\n\nJob Desc Snippet:\n{job_desc[:300]}..."
 
     try:
-        chat = client.chats.create(model='gemini-1.5-flash-latest', # Use a capable eval model
-                                  config=types.GenerateContentConfig(temperature=0.3))
+        chat = client.chats.create(model="gemini-2.5-pro-exp-03-25", # Use a new model to try
+                                  config=types.GenerateContentConfig(temperature=0.5))
 
         # Generate the full text comparison
         response_eval = chat.send_message(
@@ -216,7 +216,7 @@ def eval_pairwise(prompt, resume, job_desc, response_a, response_b):
         return f"Error during pairwise evaluation: {e}", None
 
 
-# --- Evaluation Runner Functions (from Notebook) ---
+# --- Evaluation Runner Functions ---
 
 def mul_eval_task(llm, prompt, resume, job_desc, evac_func, NUM_ITERATIONS=1, filename="pointwise_comparison_result.txt"):
     """Runs multiple pointwise evaluations and saves results."""
@@ -266,7 +266,7 @@ def mul_eval_task(llm, prompt, resume, job_desc, evac_func, NUM_ITERATIONS=1, fi
         # Save the responses and evaluation text regardless of score parsing
         responses[model_name].append((summary, written_eval))
 
-        time.sleep(5) # Avoid rate limits
+        time.sleep(5) # Avoid rate limits, for free version, still will hit rate limits
 
     avg_score = scores[model_name] / valid_evals if valid_evals > 0 else 0
     print(f"\n--- Pointwise Summary for {model_name} ---")
@@ -470,7 +470,7 @@ class ModelComparisonRunner:
             print(f"Error saving pairwise results to file '{filename}': {e}")
 
 
-# Example of how to potentially use these functions (commented out)
+# Example of how to potentially use these functions (check out the notebook)
 # if __name__ == "__main__":
 #     print("Evaluation script loaded.")
 #     print("This script provides functions for evaluating LLM responses.")
